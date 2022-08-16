@@ -14,7 +14,7 @@
         echo "<br><br>IP Address is: " .$_SERVER["SERVER_PORT"];
         echo "<br><br>IP Address is: " .$_SERVER["REMOTE_PORT"];
         echo "<br><br>IP Address is: " .$_SERVER["SERVER_ADMIN"];
-
+        
     ?>
 </body>
 </html>
