@@ -9,6 +9,7 @@
 <body>
     <?php
         $fileHandler = fopen('./files/namess.txt','a');
+        // a+ read/append
         fwrite($fileHandler,"New line\n");
         fclose($fileHandler);
     ?>

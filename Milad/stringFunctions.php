@@ -16,6 +16,7 @@
         echo "Replacing a string: ".str_replace("Lee","Ken",$name)."</br>";
         echo "Return a substring: ".substr($name,strpos($name,"Lee"),strlen("Lee"))."</br>";
         echo $name."</br>";//the main string will never change using the above functions
+        //getter & setter to change the property
         for($idx=0;$idx<strlen($name);$idx++){
             echo $name[$idx]."</br>";
         }

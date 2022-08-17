@@ -1,0 +1,4 @@
+Product: Americano
+Price:$ 3
+Quantity: 1
+Total:$ 3
