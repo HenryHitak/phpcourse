@@ -35,7 +35,7 @@
                 return $total += $this->calTotal();
             }
             function writeDetails(){
-                return "Product: ".$this->pName."\nPrice:$ ".$this->price."\nQuantity: ".$this->qty."\nTotal:$ ".$this->calTotal()."\n";
+                return "Product: ".$this->pName."\nPrice: ".$this->price."\nQuantity: ".$this->qty."\nTotal: ".$this->calTotal()."\n";
             }
         }
 
