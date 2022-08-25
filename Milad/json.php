@@ -30,7 +30,7 @@
             $min = 100;
             echo "<table><tr><th>FirstName</th><th>lastName</th><th>Score</th></tr>";
             foreach($studentData as $idx=>$student){
-                echo "<tr><td>$student->first_name</td><td>$student->last_name</td><td>$student->grade</td><td><a href='./editUser.php?idx=$idx'>Edit</a></td><td><a href='./delete.php?idx=$idx'>Delete</a></td></tr>";
+                echo "<tr><td>$student->first_name</td><td>$student->last_name</td><td>$student->grade</td><td><a href='./editUser.php?idx=$idx'>Edit</a></td></tr>";
                 $sum += $student->grade;
                 if($max<=$student->grade){
                     $max = $student->grade;
@@ -46,8 +46,8 @@
             echo "<h1>Average is: $avg, Max is: $max, Min is: $min</h1>";
             echo "<h1>Max student is: $maxStudent, Min student is: $minStudent</h1>";
         }
-        $fileHandler = fopen('./files/MOCK_DATA.json','r');
-        $data = fread($fileHandler,filesize('./files/MOCK_DATA.json'));
+        $fileHandler = fopen('../files/MOCK_DATA.json','r');
+        $data = fread($fileHandler,filesize('../files/MOCK_DATA.json'));
         fclose($fileHandler);
         $studentData = json_decode($data);
         if($_SERVER['REQUEST_METHOD']=="POST"){
@@ -56,14 +56,13 @@
             $tmpStudent['grade'] = (float)$_POST['score'];
             array_push($studentData,$tmpStudent);
             $newData = json_encode($studentData);
-            $fileHandler = fopen('./files/MOCK_DATA.json','w');
+            $fileHandler = fopen('../files/MOCK_DATA.json','w');
             fwrite($fileHandler,$newData);
             fclose($fileHandler);
             loadData(json_decode($newData));
         }else{
             loadData($studentData);
         }
-
     ?>
 </body>
 </html>
